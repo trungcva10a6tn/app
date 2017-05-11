@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+        }
+        span, select{
+            display: block;
+        }
+        select{
+            font-size: 15px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>Amount</span>
+    <input type="number" id="sl"/>
+</div>
+<div>
+    <span> From Courrency</span>
+    <select id="country_1">
+        <option value="1">VN</option>
+        <option value="22000">USD</option>
+        <option value="25000">GBP</option>
+    </select>
+</div>
+<div>
+    <span>To Courrency</span>
+    <select id="country_2">
+        <option value="1">VN</option>
+        <option value="22000">USD</option>
+        <option value="25000">GBP</option>
+    </select>
+</div>
+<button onclick="info()">Chuyển</button>
+</br>
+Thành tiền là:<div id="inf"></div>
+<script>
+    function info() {
+        var number = parseInt( document.getElementById("sl").value);
+        var country_1 = parseInt( document.getElementById("country_1").value);
+        var country_2 = parseInt( document.getElementById("country_2").value);
+        var ket_qua=0;
+        ket_qua = number * country_1 / country_2;
+        document.getElementById("inf").innerHTML = " " + ket_qua;
+    }
+</script>
+</body>
+</html>
